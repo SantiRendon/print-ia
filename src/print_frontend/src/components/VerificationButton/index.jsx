@@ -1,10 +1,9 @@
-import React from 'react'
-import './index.css'
-
-const VerificationButton = () => {
+import { Button } from "@material-tailwind/react";
+ 
+export default function VerificationButton() {
   return (
-    <button className='verify-class'>Verify with printIA</button>
-  )
+    <h1 className="text-3xl font-bold underline">
+      Hello world!
+    </h1>
+  );
 }
-
-export default VerificationButton
