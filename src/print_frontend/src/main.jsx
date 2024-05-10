@@ -4,6 +4,7 @@ import App from './App';
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import './index.css';
 import VerificationButton from './components/VerificationButton';
+import Login from './components/Login';
 
 const router = createBrowserRouter([
   {
@@ -12,7 +13,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/auth",
-    element: <VerificationButton/>,
+    element: <Login/>,
   },
 ]);
 
