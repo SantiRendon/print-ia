@@ -2,7 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import './index.scss';
+import './index.css';
+import VerificationButton from './components/VerificationButton';
 
 const router = createBrowserRouter([
   {
@@ -11,7 +12,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/auth",
-    element: <h1>Auth</h1>,
+    element: <VerificationButton/>,
   },
 ]);
 
