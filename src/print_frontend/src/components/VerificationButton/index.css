@@ -1,10 +1,16 @@
-.verify-class{
-    width: 500px;
-    height: 500px;
+.verify-class {
+  width: 500px;
+  height: 500px;
 
-    background-color: blueviolet;
-    
+  background-color: blueviolet;
 }
-.verify-class:hover{
-    background-color: rgb(142, 85, 196);
+.verify-class:hover {
+  background-color: rgb(142, 85, 196);
+}
+
+.layoutButton {
+  margin-top: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
