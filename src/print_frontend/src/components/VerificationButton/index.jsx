@@ -1,11 +1,10 @@
 import React from "react";
 import "./index.css";
+// import { ConnectButton } from "@connect2ic/react";
 
 const VerificationButton = () => {
   return (
     <div className="layoutButton">
-
-    
     <div id="botonVerificar" class="px-6 sm:px-0 max-w-sm">
       <button
         type="button"
@@ -29,6 +28,7 @@ const VerificationButton = () => {
         Verificar con Print<div></div>
       </button>
     </div>
+    {/* <ConnectButton /> */}
     </div>
   );
 };
