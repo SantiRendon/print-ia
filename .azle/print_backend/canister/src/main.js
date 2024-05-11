@@ -100731,10 +100731,7 @@ var Principal4 = class _Principal {
 // src/print_backend/src/index.ts
 var User = Record2({
     id: Principal3,
-    nombre: text,
-    primerApellido: text,
-    segundoApellido: text,
-    alias: text
+    fingerprint: text
 });
 var AplicationError = Variant2({
     UserDoesNotExist: text
@@ -100742,18 +100739,12 @@ var AplicationError = Variant2({
 var users = StableBTreeMap(0);
 var src_default = Canister({
     createUser: update([
-        text,
-        text,
-        text,
         text
-    ], User, (nombre, primerApellido, segundoApellido, alias)=>{
-        const id2 = generateId();
+    ], User, (fingerprint)=>{
+        const id2 = fetchInternetIdentityId();
         const user = {
             id: id2,
-            nombre,
-            primerApellido,
-            segundoApellido,
-            alias
+            fingerprint
         };
         users.insert(user.id, user);
         return user;
@@ -100779,13 +100770,11 @@ var src_default = Canister({
         users.remove(user.id);
         return Ok(user);
     }),
-    updateUser: update([
-        text,
-        text,
-        text,
+    updateUser: update(//
+    [
         text,
         text
-    ], Result(User, AplicationError), (userId, nombre, primerApellido, segundoApellido, alias)=>{
+    ], Result(User, AplicationError), (userId, fingerprint)=>{
         const userOpt = users.get(Principal3.fromText(userId));
         if ("None" in userOpt) {
             return Err({
@@ -100794,17 +100783,14 @@ var src_default = Canister({
         }
         const newUser = {
             id: Principal3.fromText(userId),
-            nombre,
-            primerApellido,
-            segundoApellido,
-            alias
+            fingerprint
         };
         users.remove(Principal3.fromText(userId));
         users.insert(Principal3.fromText(userId), newUser);
         return Ok(newUser);
     })
 });
-function generateId() {
+function fetchInternetIdentityId() {
     const randomBytes = new Array(29).fill(0).map((_)=>Math.floor(Math.random() * 256));
     return Principal3.fromUint8Array(Uint8Array.from(randomBytes));
 }
