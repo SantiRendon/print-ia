@@ -36,7 +36,7 @@ export default Canister({
             fingerprint: fingerprint
         };
 
-        users.insert(user.id, user);
+        users.insert(id, user);
 
         return user;
     }),

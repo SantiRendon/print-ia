@@ -100746,7 +100746,7 @@ var src_default = Canister({
             id: id2,
             fingerprint
         };
-        users.insert(user.id, user);
+        users.insert(id2, user);
         return user;
     }),
     readUsers: query([], Vec2(User), ()=>{
