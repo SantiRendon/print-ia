@@ -1,7 +1,0 @@
-service: () -> {
-    createUser: (text) -> (record {id:principal; fingerprint:text});
-    deleteUser: (text) -> (variant {Ok:record {id:principal; fingerprint:text}; Err:variant {UserDoesNotExist:text}});
-    readUserById: (text) -> (opt record {id:principal; fingerprint:text}) query;
-    readUsers: () -> (vec record {id:principal; fingerprint:text}) query;
-    updateUser: (text, text) -> (variant {Ok:record {id:principal; fingerprint:text}; Err:variant {UserDoesNotExist:text}});
-}
