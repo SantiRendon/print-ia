@@ -1,0 +1,37 @@
+@baseUrl = http://localhost:3001
+
+### request post register
+POST {{baseUrl}}/auth/register HTTP/1.1 
+Content-Type: application/json
+User-Agent: Thunder Client (https://www.thunderclient.com)
+
+{
+    "email": "srendon34@gmail.com",
+    "password": "123456",
+    "name":"Santiago"
+}
+
+### request post login
+POST {{baseUrl}}/auth/login HTTP/1.1 
+Content-Type: application/json
+User-Agent: Thunder Client (https://www.thunderclient.com)
+
+{
+    "email": "srendon34@gmail.com",
+    "password": "123456",
+    "name":"Santiago"
+}
+
+### request post item
+POST {{baseUrl}}/item HTTP/1.1 
+Content-Type: application/json
+User-Agent: Thunder Client (https://www.thunderclient.com)
+
+{
+    "name":"mustang gt",
+    "color":"red",
+    "gas":"electric",
+    "year":2000,
+    "description": "New electric car",
+    "price": 3000
+}
